@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Dashboard</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="app-logo">
+            <h2>Task Dashboard</h2>
+        </div>
+
+        <div>
+            <h3>Active Session</h3>
+        </div>
+    </header>
+
+
+    <main class="dashboard-content">
+
+        <div class="side-bar">
+            <h2>Hello <span id="username">User</span></h2>
+            <p>Workspace Account</p>
+
+            <div class="side-buttons">
+                <button id="open-task-modal" type="button">+ Add New Task</button>
+                <button id="logout-button" type="button">Logout</button>
+            </div>
+        </div>
+
+
+        <div class="content">
+
+            <div class="content-heading">
+                <h1>My Tasks</h1>
+                <p>Manage and track your daily activities.</p>
+            </div>
+
+
+            <div class="stat-cards">
+
+                <div class="stat-det">
+                    <h2 id="total-tasks">0</h2>
+                    <p>Total</p>
+                </div>
+
+                <div class="stat-det">
+                    <h2 id="completed-tasks">0</h2>
+                    <p>Done</p>
+                </div>
+
+                <div class="stat-det">
+                    <h2 id="pending-tasks">0</h2>
+                    <p>Pending</p>
+                </div>
+
+            </div>
+
+
+            <div class="task-filter">
+                <label for="filter-tasks">Filter Tasks</label>
+
+                <select id="filter-tasks">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending Tasks</option>
+                    <option value="completed">Completed Tasks</option>
+                </select>
+            </div>
+
+
+            <div id="task-list">
+
+                <div id="empty-task-message" class="empty-task-message">
+                    <h2>No Tasks Yet</h2>
+                    <p>Click Add New Task to create your first task.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Add Task Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+
+        <section class="add-task-modal">
+
+            <div class="modal-header">
+                <h2 id="modal-title">Add Task</h2>
+                <button id="close-task-modal" type="button">X</button>
+            </div>
+
+            <form id="task-form">
+
+                <input id="task-id" type="hidden">
+
+                <label for="task-title">Task Title</label>
+                <input id="task-title" type="text" placeholder="What needs to be done?" required>
+
+                <label for="task-description">Description</label>
+                <textarea id="task-description" placeholder="Add details here"></textarea>
+
+                <label for="task-priority">Priority</label>
+
+                <select id="task-priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="task-deadline">Deadline</label>
+                <input id="task-deadline" type="date" required>
+
+                <p id="task-message" class="form-message"></p>
+
+                <div class="modal-buttons">
+                    <button id="cancel-task" type="button">Cancel</button>
+                    <button type="submit">Save Task</button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

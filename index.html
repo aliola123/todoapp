@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <main class="auth-main">
+        <section class="auth-page">
+
+            <!-- Login Page -->
+            <div class="signin-page auth-section active">
+                <div class="auth-header">
+                    <h2>To-Do App</h2>
+                    <p>Stay organized every day</p>
+                </div>
+
+                <div class="auth-form">
+                    <h3>Welcome Back</h3>
+
+                    <form id="login-form">
+                        <label for="login-email">Email</label>
+                        <input id="login-email" type="email" placeholder="Enter your email" required>
+
+                        <label for="login-password">Password</label>
+                        <div class="password-box">
+                            <input id="login-password" type="password" placeholder="Enter your password" required>
+                            <button class="password-toggle" type="button" data-password="login-password">Show</button>
+                        </div>
+
+                        <button class="loginButton" type="submit">Login</button>
+                    </form>
+
+                    <p id="login-message" class="form-message"></p>
+
+                    <a href="#" id="show-signup">Create Account</a>
+                    <a href="#" id="show-reset">Forgot Password?</a>
+                </div>
+            </div>
+
+
+            <!-- Sign Up Page -->
+            <div class="signup-page auth-section">
+                <div class="auth-header">
+                    <h2>To-Do App</h2>
+                    <p>Stay organized every day</p>
+                </div>
+
+                <div class="auth-form">
+                    <h3>Create Account</h3>
+
+                    <form id="signup-form">
+                        <label for="signup-fullname">Full Name</label>
+                        <input id="signup-fullname" type="text" placeholder="Enter your full name" required>
+
+                        <label for="signup-email">Email</label>
+                        <input id="signup-email" type="email" placeholder="Enter your email" required>
+
+                        <label for="signup-password">Password</label>
+                        <div class="password-box">
+                            <input id="signup-password" type="password" placeholder="Create a password" required>
+                            <button class="password-toggle" type="button" data-password="signup-password">Show</button>
+                        </div>
+
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <div class="password-box">
+                            <input id="signup-confirm-password" type="password" placeholder="Confirm your password" required>
+                            <button class="password-toggle" type="button" data-password="signup-confirm-password">Show</button>
+                        </div>
+
+                        <button type="submit">Create Account</button>
+                    </form>
+
+                    <p id="signup-message" class="form-message"></p>
+
+                    <a href="#" id="signup-back-login">Back to Login</a>
+                </div>
+            </div>
+
+
+            <!-- Reset Password Page -->
+            <div class="reset-password auth-section">
+                <div class="auth-header">
+                    <h2>To-Do App</h2>
+                    <p>Stay organized every day</p>
+                </div>
+
+                <div class="auth-form">
+                    <h3>Reset Password</h3>
+
+                    <p class="form-description">
+                        Enter your email and we will send you a reset link.
+                    </p>
+
+                    <form id="reset-form">
+                        <label for="reset-email">Email</label>
+                        <input id="reset-email" type="email" placeholder="Enter your email" required>
+
+                        <button type="submit">Send Reset Link</button>
+                    </form>
+
+                    <p id="reset-message" class="form-message"></p>
+
+                    <a href="#" id="reset-back-login">Back to Login</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
